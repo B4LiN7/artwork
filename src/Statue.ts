@@ -7,13 +7,11 @@ export class Statue implements Artwork {
     height: number;
 
     constructor(title: string, year: number, price: number, height: number) {
-        this.title = title;
-        this.year = year;
-        this.price = price;
-        this.height = height;
+        this.setTitle(title);
+        this.setYear(year);
+        this.setPrice(price);
+        this.setHeight(height);
     }
-
-    /*
 
     setTitle(title: string): void {
         if (title.length == 0) {
@@ -53,7 +51,5 @@ export class Statue implements Artwork {
         }
         this.height = height;
     }
-
-    */
 
 }

@@ -13,6 +13,12 @@ const errorMsg = document.getElementById("errorMsg") as HTMLElement;
 errorMsg.style.color = "red";
 errorMsg.style.visibility = "hidden";
 
+function AddStatueToList(title: string, year: number, price: number, height: number): void {
+  statues.push(new Statue(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value)));
+  clearForm();
+  updateStats();
+}
+
 function tryAddStatueToList(title: string, year: number, price: number, height: number): void {
   if (title.length == 0) {
     errorMsg.innerText = "A név nem lehet üres!";
@@ -66,6 +72,7 @@ function updateStats(): void {
 
   const p = document.createElement("p");
   p.innerText = `A szobrok száma: ${numberOfStatues}, az összértékük: ${priceOfAllStatues} Ft.`;
+  
   stats.innerHTML = "";
   stats.appendChild(p);
 }
@@ -74,7 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("inForm")?.addEventListener("submit", (event) => {
     event.preventDefault();
-    tryAddStatueToList(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value));
+
+    AddStatueToList(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value))
+    // tryAddStatueToList(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value));
   });
 
 });
