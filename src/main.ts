@@ -23,6 +23,7 @@ function tryAddStatueToList2(title: string, year: number, price: number, height:
     statues.push(tempStatue);
     errorMsg.style.visibility = "hidden";
     updateStats();
+    clearForm();
   }
   catch (error: any) {
     errorMsg.innerText = error.message;
