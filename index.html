@@ -4,10 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Artwork</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="stats">
+    </div>
+    <div>
+      <form id="inForm">
+        <label for="inTitle">Név: </label>
+        <input type="text" id="inTitle">
+        <label for="inYear">Év:</label>
+        <input type="number" id="inYear">
+        <label for="inPrice">Ár:</label>
+        <input type="number" id="inPrice">
+        <label for="inHeight">Magasság (cm):</label>
+        <input type="number" id="inHeight">
+        <input type="submit" value="Felvétel">
+        <p id="errorMsg"></p>
+      </form>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
