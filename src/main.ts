@@ -21,7 +21,7 @@ function tryAddStatueToList2(title: string, year: number, price: number, height:
     tempStatue.setPrice(price);
     tempStatue.setHeight(height);
     statues.push(tempStatue);
-    errorMsg.style.visibility = "hiden";
+    errorMsg.style.visibility = "hidden";
     updateStats();
   }
   catch (error: any) {

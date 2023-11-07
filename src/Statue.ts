@@ -17,7 +17,7 @@ export class Statue implements Artwork {
         if (title.length == 0) {
             throw new Error("A név nem lehet üres!");
         }
-        else if (!/^[a-zA-z\,\-]+$/.test(title)) {
+        else if (!/^[a-zA-z\s\,]+$/.test(title)) {
             throw new Error("A név nem felel meg a formai szabályoknak!");
         }
         this.title = title;
