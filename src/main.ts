@@ -14,9 +14,21 @@ errorMsg.style.color = "red";
 errorMsg.style.visibility = "hidden";
 
 function AddStatueToList(title: string, year: number, price: number, height: number): void {
-  statues.push(new Statue(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value)));
-  clearForm();
-  updateStats();
+  let tempStatue: Statue = new Statue("title", new Date().getFullYear(), 1, 10);
+  try {
+    tempStatue.setTitle(title);
+    tempStatue.setYear(year);
+    tempStatue.setPrice(price);
+    tempStatue.setHeight(height);
+    statues.push(tempStatue);
+    errorMsg.style.visibility = "hiden";
+    updateStats();
+  }
+  catch (error: any) {
+    errorMsg.innerText = error.message;
+    errorMsg.style.visibility = "visible";
+    return;
+  }
 }
 
 function tryAddStatueToList(title: string, year: number, price: number, height: number): void {
@@ -72,7 +84,7 @@ function updateStats(): void {
 
   const p = document.createElement("p");
   p.innerText = `A szobrok száma: ${numberOfStatues}, az összértékük: ${priceOfAllStatues} Ft.`;
-  
+
   stats.innerHTML = "";
   stats.appendChild(p);
 }
