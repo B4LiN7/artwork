@@ -12,7 +12,7 @@ export class Statue implements Artwork {
         this.price = price;
         this.height = height;
     }
-    
+
     /*
 
     setTitle(title: string): void {

@@ -10,8 +10,8 @@ const inPrice = document.getElementById("inPrice") as HTMLInputElement;
 const inHeight = document.getElementById("inHeight") as HTMLInputElement;
 
 const errorMsg = document.getElementById("errorMsg") as HTMLElement;
-errorMsg.style.visibility = "hidden";
 errorMsg.style.color = "red";
+errorMsg.style.visibility = "hidden";
 
 function tryAddStatueToList(title: string, year: number, price: number, height: number): void {
   if (title.length == 0) {
@@ -60,7 +60,7 @@ function clearForm(): void {
   inHeight.value = "";
 }
 
-function updateStats() {
+function updateStats(): void {
   const numberOfStatues = statues.length;
   const priceOfAllStatues = statues.reduce((sum, current) => sum + current.price, 0);
 
@@ -71,6 +71,7 @@ function updateStats() {
 }
 
 document.addEventListener("DOMContentLoaded", () => { 
+
   document.getElementById("inForm")?.addEventListener("submit", (event) => {
     event.preventDefault();
     tryAddStatueToList(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value));
