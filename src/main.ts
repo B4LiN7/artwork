@@ -13,7 +13,7 @@ const errorMsg = document.getElementById("errorMsg") as HTMLElement;
 errorMsg.style.color = "red";
 errorMsg.style.visibility = "hidden";
 
-function AddStatueToList(title: string, year: number, price: number, height: number): void {
+function tryAddStatueToList2(title: string, year: number, price: number, height: number): void {
   let tempStatue: Statue = new Statue("title", new Date().getFullYear(), 1, 10);
   try {
     tempStatue.setTitle(title);
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("inForm")?.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    AddStatueToList(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value))
+    tryAddStatueToList2(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value))
     // tryAddStatueToList(inTitle.value, parseInt(inYear.value), parseInt(inPrice.value), parseInt(inHeight.value));
   });
 
