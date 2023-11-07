@@ -12,6 +12,8 @@ export class Statue implements Artwork {
         this.price = price;
         this.height = height;
     }
+    
+    /*
 
     setTitle(title: string): void {
         if (title.length == 0) {
@@ -23,6 +25,25 @@ export class Statue implements Artwork {
         this.title = title;
     }
 
+    setYear(year: number): void {
+        if (isNaN(year)) {
+            throw new Error("Az év nem lehet üres!");
+        }
+        else if (year > new Date().getFullYear()) {
+            throw new Error("A megadott év nem lehet nagyobb, mint a jelenlegi év!");
+        }
+        this.year = year;
+    }
+
+    setPrice(price: number): void {
+        if (isNaN(price)) {
+            throw new Error("Az ár nem lehet üres!");
+        } else if (price < 1) {
+            throw new Error("Az ár nem lehet kevessebb, mint egy!");
+        }
+        this.price = price;
+    } 
+
     setHeight(height: number): void {
         if (isNaN(height)) {
             throw new Error("A magasság nem lehet üres!");
@@ -33,6 +54,6 @@ export class Statue implements Artwork {
         this.height = height;
     }
 
-
+    */
 
 }
